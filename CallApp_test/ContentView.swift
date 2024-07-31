@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var callManager = CallManager()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            CallView()
+                .environmentObject(callManager)
         }
-        .padding()
     }
 }
+
 
 #Preview {
     ContentView()
